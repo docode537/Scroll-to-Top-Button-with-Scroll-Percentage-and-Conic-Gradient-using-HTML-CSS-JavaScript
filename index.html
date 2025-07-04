@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll To Top Button</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f9f9f9;
+            height: 300vh;
+        }
+        .scrollTopButton{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            width: 60px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            background: conic-gradient(#2b2692 0%, #e0e0e0 0%);
+            color: white;
+            cursor: pointer;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.162);
+            z-index: 100;
+            transition: 200ms ease;
+            padding: 0.4rem;
+        }
+        .scrollTopButton .box{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            aspect-ratio: 1;
+            background-color: #4f46e5;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .scrollTopButton .box>span{
+            width: 100%;
+            aspect-ratio: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 300ms ease;
+        }
+        .scrollTopButton:hover .box>span{
+            transform: translateY(-100%);
+        }
+        /* hide scroller */
+        .scrollTopButton.hide{
+            transform: translateY(120%);
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+<button class="scrollTopButton hide">
+    <span class="box">
+        <span class="percentage">10%</span>
+        <span class="icon"><i class="fa-solid fa-arrow-up"></i></span>
+    </span>
+</button>
+
+<script>
+    const scrollTopButton = document.querySelector('.scrollTopButton');
+    const percentText = document.querySelector('.percentage');
+    const docHeight = document.body.scrollHeight - window.innerHeight;
+
+    // add eventlister to window on scroll
+    window.addEventListener('scroll',()=>{
+        const scrollTop = window.scrollY;
+        const scrollPercentage = Math.round((scrollTop/docHeight)*100);
+        //update text
+        percentText.textContent=`${scrollPercentage}%`;
+        // update gradient bar
+        scrollTopButton.style.background=`conic-gradient(#2b2692 ${scrollPercentage}%, #e0e0e0 ${scrollPercentage}%)`;
+
+        // show scrollTopButton if scroll value is more than 5 %
+        if(scrollPercentage>5){
+            scrollTopButton.classList.remove('hide');
+        }else{
+            scrollTopButton.classList.add('hide');
+        }
+    });
+
+    //scroll to top on click
+    scrollTopButton.addEventListener('click',()=>{
+        window.scrollTo({top:0,behavior:"smooth"})
+    })
+</script>
+</body>
+
+</html>
