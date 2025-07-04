@@ -16,7 +16,7 @@ Watch the full step-by-step implementation:
 
 ## 📝 Read Blog Post  
 Explore the complete blog explanation:  
-[📰 Read Blog](#)
+[📰 Read Blog](https://docode.co.in/post/scroll-to-top-button-with-scroll-percentage-and-conic-gradient-using-html-css-javascript)
 
 ---
 
