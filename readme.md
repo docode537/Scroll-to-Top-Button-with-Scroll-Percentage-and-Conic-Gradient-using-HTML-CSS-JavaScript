@@ -16,7 +16,7 @@ Watch the full step-by-step implementation:
 
 ## 📝 Read Blog Post  
 Explore the complete blog explanation:  
-[📰 Read Blog](https://docode.co.in/post/scroll-to-top-button-with-scroll-percentage-and-conic-gradient-using-html-css-javascript)
+[📰 Read Blog](https://docode.fun/post/scroll-to-top-button-with-scroll-percentage-and-conic-gradient-using-html-css-javascript)
 
 ---
 
@@ -45,6 +45,6 @@ git clone https://github.com/docode537/Scroll-to-Top-Button-with-Scroll-Percenta
 
 ---
 ## 📩 Connect With Me
-🌐 Website: [DoCode](https://docode.co.in/)
+🌐 Website: [DoCode](https://docode.fun/)
 📧 Email: docode537@gmail.com 
 ---
